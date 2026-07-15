@@ -72,6 +72,8 @@ C:\Users\ysnock\.config\opencode\opencode.json
 
 It now includes `provider.xai-oauth` with these model IDs:
 
+- `grok-4.5`
+- `grok-composer-2.5-fast`
 - `grok-4.3`
 - `grok-4.20-0309-reasoning`
 - `grok-4.20-0309-non-reasoning`
@@ -89,6 +91,12 @@ Equivalent config block:
         "baseURL": "https://api.x.ai/v1"
       },
       "models": {
+        "grok-4.5": {
+          "name": "Grok 4.5"
+        },
+        "grok-composer-2.5-fast": {
+          "name": "Composer 2.5 Fast"
+        },
         "grok-4.3": {
           "name": "Grok 4.3"
         },
@@ -140,7 +148,7 @@ xAI Grok OAuth
 6. Select a model in OpenCode:
 
 ```text
-xai-oauth/grok-4.3
+xai-oauth/grok-4.5
 ```
 
 ## Models
@@ -149,13 +157,16 @@ xai-oauth/grok-4.3
 
 | Model ID                       | Use                                       |
 | ------------------------------ | ----------------------------------------- |
-| `grok-4.3`                     | Default general-purpose Grok OAuth model. |
+| `grok-4.5`                     | Default general-purpose Grok OAuth model. |
+| `grok-composer-2.5-fast`       | Composer 2.5 Fast coding model.           |
+| `grok-4.3`                     | Previous general-purpose Grok OAuth model.|
 | `grok-4.20-0309-reasoning`     | Reasoning-heavy tasks.                    |
 | `grok-4.20-0309-non-reasoning` | Faster non-reasoning variant.             |
 | `grok-4.20-multi-agent-0309`   | Multi-agent oriented Grok variant.        |
 
-The fallback list mirrors the Hermes Agent xAI OAuth model list as of this
-implementation. If xAI renames or retires models, update `src/constants.ts` and
+The fallback list includes current SuperGrok OAuth chat models (`grok-4.5`,
+`grok-composer-2.5-fast`) plus the earlier Hermes-compatible Grok IDs. If xAI
+renames or retires models, update `src/constants.ts` and
 `~/.config/opencode/opencode.json`.
 
 ## Configuration
@@ -232,7 +243,7 @@ C:\Users\ysnock\.config\opencode\opencode.json
 Then restart OpenCode and select:
 
 ```text
-xai-oauth/grok-4.3
+xai-oauth/grok-4.5
 ```
 
 ### API Key Missing
