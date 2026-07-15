@@ -18,6 +18,8 @@ export const XAI_ACCESS_TOKEN_REFRESH_SKEW_MS = 120_000;
 export const OAUTH_CALLBACK_TIMEOUT_MS = 180_000;
 
 export const DEFAULT_XAI_MODELS = [
+  "grok-4.5",
+  "grok-composer-2.5-fast",
   "grok-4.3",
   "grok-4.20-0309-reasoning",
   "grok-4.20-0309-non-reasoning",

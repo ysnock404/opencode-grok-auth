@@ -9,7 +9,10 @@ describe("plugin config", () => {
     const provider = (config.provider as Record<string, unknown>)["xai-oauth"] as Record<string, unknown>;
     expect(provider.npm).toBe("@ai-sdk/openai");
     expect((provider.options as Record<string, unknown>).baseURL).toBe("https://api.x.ai/v1");
-    expect(Object.keys(provider.models as Record<string, unknown>)).toContain("grok-4.3");
+    const modelIds = Object.keys(provider.models as Record<string, unknown>);
+    expect(modelIds).toContain("grok-4.5");
+    expect(modelIds).toContain("grok-composer-2.5-fast");
+    expect(modelIds).toContain("grok-4.3");
   });
 
   it("only treats api.x.ai as a safe API token destination", () => {
